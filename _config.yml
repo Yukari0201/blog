@@ -104,10 +104,3 @@ deploy:
   type: "git"
   repo: https://github.com/Yukari0201/Yukari0201.github.io.git
   branch: master
-
-backup:
-  type: git
-  theme: next
-  repository:
-    github: git@github.com:Yukari0201/Yukari0201.github.io.git,backup
-    gitcafe: git@github.com:Yukari0201/Yukari0201.github.io.git,backup
