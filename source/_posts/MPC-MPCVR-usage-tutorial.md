@@ -1,0 +1,197 @@
+---
+title: MPC + MPCVR 使用教程
+date: 2025-01-05 20:16:45
+tags:
+- Windows
+- DirectShow
+- MPC-BE
+- MPC-HC
+---
+
+## 观前声明
+
+本人将主力播放器换成了 mpv 已经有很长一段时间了，所以本篇教程的更新或许不会那么及时。  
+我的 mpv 自用配置：https://github.com/Yukari0201/mpv-config
+
+本教程基于 Windows11 编写，兼容 Windows10 (x64)。  
+32位 或 更低版本的 Windows 不保证兼容。
+
+由于个人更喜欢使用 MPC-BE ，所以本教程更侧重于 MPC-BE + MPCVR，但也会给出 MPC-HC 的推荐设置。
+
+由于我 [scoop](https://scoop.sh/) 用入魔了，所以增加了一些 scoop 相关的内容。**不明白请直接跳过**。
+
+## 目录
+
+- 兵欲善其事，必先利其器 -- 安装各播放器组件
+  - 安装 MPC-BE + MPCVR
+  - 安装 MPC-HC + MPCVR
+  - 写给 scoop 用户：
+    - 用 scoop 安装 MPC-BE + MPCVR
+    - 用 scoop 安装 MPC-HC + MPCVR
+- 简单调教 MPC-BE / MPC-HC
+  - 简单调教 MPC-BE
+    - 音频部分
+    - 视频部分
+    - 杂项
+  - 简单调教 MPC-HC
+    - 音频部分
+    - 视频部分
+    - 杂项
+- MPCVR 推荐设置
+- 完结撒花 ✿ヽ(°▽°)ノ✿
+  - 一些有用的教程指路
+
+## 兵欲善其事，必先利其器——安装各播放器组件
+
+MPC-BE 和 MPC-HC 根据个人喜好二选一即可。
+
+### 安装 MPC-BE + MPCVR
+
+#### 安装 MPC-BE
+
+去 MPC-BE 的 [Github Releases](https://github.com/Aleksoid1978/MPC-BE/releases) 或 [Source Forge](https://sourceforge.net/projects/mpcbe/files/MPC-BE/Release%20builds/)  下载最新版本的安装包（名称类似 `MPC-BE.<版本号>.x64-installer.zip`），解压并运行安装程序，  
+安装程序有简体中文，大多数选项我相信各位都能看懂，所以我只提一点：  
+在 `选择组件` 这一步请全部勾选，或者至少勾选 `MPC Video Renderer <版本号>`，这样就把 MPCVR 也顺带安装好了（同时请跳过本文的 `安装 MPC Video Renderer` 部分）。
+
+#### 安装 MPC Video Renderer
+
+如果你在 MPC-BE 的安装过程中，`选择组件` 这一步勾选了 `MPC Video Renderer [版本号]`，那么请跳过此部分。
+
+去 MPCVR 的 [Github Releases](https://github.com/Aleksoid1978/VideoRenderer/releases) 下载最新版本的 MPCVR（名称类似 ` MpcVideoRenderer-<版本号>.zip `），将其解压至一个你**不会去删除**的路径中，然后 点击 `Install_MPCVR_64.cmd` -> `鼠标右键`  -> `以管理员身份运行`。
+
+### 安装 MPC-HC + MPCVR
+
+#### 安装 MPC-HC
+
+MPC-HC 的官方版本早已停更，现在是由 clsid2 进行维护。
+
+去 MPC-HC 的 [Github Releases](hhttps://github.com/clsid2/mpc-hc/releases/latest) 下载最新版本的安装包（名称类似 `MPC-HC.<版本号>.x64.exe `），解压并运行安装程序。  
+安装程序有简体中文，大多数选项我相信各位都能看懂，安装过程直接一直下一步即可。
+
+#### 安装 MPC Video Renderer
+
+MPC-HC 的默认安装选项已集成 MPCVR，无须另行安装。
+
+### 写给 scoop 用户：
+
+#### 用 scoop 安装 MPC-BE + MPCVR
+
+```
+scoop bucket add extras
+scoop install mpc-be
+```
+```
+scoop bucket add Yukari0201 https://github.com/Yukari0201/scoop-bucket
+scoop install Yukari0201/mpcvr
+```
+
+#### 用 scoop 安装 MPC-HC + MPCVR
+
+```
+scoop bucket add extras
+scoop install mpc-hc
+```
+
+便携版本的 MPC-HC 也已集成 MPCVR，无须另行安装。
+
+## 简单调教 MPC-BE / MPC-HC
+
+### 简单调教 MPC-BE
+
+点击 `鼠标右键` -> `选项` 或 `查看` -> `选项` 进入设置
+
+#### 音频部分
+
+大部分选项无须更改
+
+`音频` -> `音频渲染器` -> `0. MPC Audio Renderer`(即默认选项)
+
+`音频` -> `声音处理` -> `声道合成` -> `混合声道至` -> `<根据你的设备更改>`(其中，`立体声` 即 `双声道`)  
+注意：**不要**勾选 `要求解码器输出 2.0 立体声`
+
+对于有更高端音频设备(独立声卡/外置DAC)，需要直通某些格式的音频的用户，请在 `内置滤镜` -> `音频解码器` -> `音频解码器设置` -> `直通 (S/PDIF、HDMI)` -> 部分勾选 `你的设备支持的格式`。
+
+#### 视频部分
+
+`视频` -> `视频渲染器` -> 改为 `MPC 渲染器`  
+
+`内置滤镜` -> `视频解码器` -> `视频解码器设置`  
+- `格式转换` -> `RGB 输出级别` - 选 `PC (0-255)` (即默认值)
+- `硬件加速` -> `首选解码器`
+  - 如果你使用 MPCVR 或 madVR，保持默认的 `D3D11, DXVA2` 即可  
+    - 选项的意思是，首先尝试使用 `D3D11 (Native)` 硬件解码，失败（例如其他不兼容 `D3D11 (Native)` 的视频渲染器，像是 `EVR`）则使用 `DXVA2 (Native)` 硬件解码  
+  - Nvidia 显卡（除了 MX 系列）的用户也可以选择N卡专用的 `NVDEC (Nvidia only)`，可以多硬解一些格式  
+  - Nvidia MX 系列显卡由于被老黄阉割了视频编解码单元，建议选择 `D3D11cb` 或 `D3D12cb`，并在 `显卡选择` 部分选择你的 `核显`  
+    - `D3D12cb`(`D3D12 copy-back`) 比 `D3D11cb`(`D3D11 copy-back`) 更新，但在极端场景下才能感知到两者的性能差距。
+  - **不推荐** 选择 `DXVA2`(`DXVA2 Native`)，它在部分情况下会出现画质损失
+
+#### 杂项
+
+- 记忆文件的播放位置 --- `播放器` -> `历史` -> `记住文件位置`
+- 在进度条上显示章节标记 --- `播放器` -> `界面` -> `显示章节标记`
+- 鼠标指向进度条时显示视频缩略图 --- `播放器` -> `界面` -> `搜索时显示预览`
+- 开始播放后自动改变窗口大小 --- `播放器` -> `窗口尺寸` -> `开始播放后` -> `按照视频大小缩放` (建议 `100%`)
+- 自动播放播放列表中的下一个视频 --- `回放` -> `打开设置` -> `额外添加到播放列表` (建议 `文件夹中的所有文件`)
+- 更改字幕最大渲染分辨率(避免出现字幕很糊的情况) --- -> `字幕` -> `渲染` -> `纹理设置(......)` -> `最大纹理分辨率` (建议改为 `自身屏幕分辨率` / `1920x1080` 或许也已够用)
+
+### 简单调教 MPC-HC
+
+点击 `鼠标右键` -> `选项` 或 `查看` -> `选项` 进入设置
+
+#### 音频部分
+
+`回放` -> `输出` -> `音频渲染器` -> 选择 `MPC 音频渲染器`  
+MPC-HC 还有一个 `SaneAR 音频渲染器` 可用，但我不熟，所以暂时还是推荐使用和 MPC-BE 一样的 `MPC 音频渲染器`
+
+`内部滤镜` -> `内部 LAV Filters 设置` -> `音频解码器`  
+- `Mixing` 选项页：  
+  - `Mixer` -> 勾选 `Enable Mixing`  
+  - `Mixer` -> `Output Spesker Cofiguration` -> `<根据你的设备更改>`（其中 `Stereo` 即为 `双声道/立体声`）  
+  - `Settings` -> `Don't mix Stereo sources`(双声道/立体声用户请勾选)  
+  - `Settings` -> `Clipping Protectiom`(如果音频设备不是太差，建议取消勾选)  
+- 对于有更高端音频设备(独立声卡/外置DAC)，需要直通某些格式的音频的用户，请更改 `Audio Settings` 选项页的一些设置：  
+  - `Bitstreaming(S/PDIF,HDMI)` -> `Formats` 勾选 `你的设备支持的格式`  
+  - 如果不清楚自己的设备支持的格式，可以在 `Bitstreaming(S/PDIF,HDMI)` -> `Options` -> 勾选 `Fallback to PCM if Bitstreaming is not supported`，该选项的意思是不支持直通的格式交给LAV解码。
+
+#### 视频部分
+
+`回放` -> `输出` -> `DirectShow 视频` -> 选择 `MPC 视频渲染器`  
+
+`内部滤镜` -> `内部 LAV Filters 设置` -> `视频解码器`  
+- `Hardware Acceleration` -> `Hardware Decoder to use`
+  - 如果你使用 MPCVR 或 madVR，请选择 `D3D11`，且不要在下方的 `Hardware Device to Use` 部分选择显卡，保持默认的 `Automatic(native)` 即可
+  - Nvidia MX 系列显卡由于被老黄阉割了视频编解码单元，建议选择 `D3D11`，并在下方的 `Hardware Device to Use` 部分选择你的 `核显`
+  - **不推荐** 选择 `DXVA2 (native)`，它在部分情况下会出现画质损失
+- `Output Formats`
+  - `RGB Output levels` -> 选择 `PC (0-255)`
+  - `Dithering Mode` -> 抖动算法，看电影居多建议 `Oredered Dithering`，看动漫居多建议 `Random Dithering`
+  - 实际上，在本篇教程的使用场景(渲染器选用 MPCVR)下，绝大多数情况下输出的都是和原片精度相同的YUV数据，`RGB Output levels` 和 `Dithering Mode` 的选项**绝大部分情况下**都不会生效
+
+#### 杂项
+
+- 记忆文件的播放位置 --- `播放器` -> `记忆文件播放位置`
+- 鼠标指向进度条时显示视频缩略图 --- `调节` -> `在进度条显示视频预览`
+- 开始播放后自动改变窗口大小 --- `回放` -> `缩放与对齐` -> `自动缩放` (默认已勾选；建议 100% [默认])
+- 自动播放文件夹中的下一个视频 --- `回放` -> `回放结束后` (建议 `播放文件夹中的下一个文件`)
+- 更改字幕最大渲染分辨率 (避免出现字幕很糊的情况) --- `字幕` -> `纹理设置（……)` -> `最大纹理分辨率` (建议改为 `自身屏幕分辨率` / `1920x1080` 也已够用)
+
+## MPCVR 推荐设置
+
+TODO
+
+## 完结撒花 ✿ヽ(°▽°)ノ✿
+
+TODO
+
+### 一些有用的教程指路
+
+- MPC Video Renderer 官方说明：https://mpc-be.org/forum/index.php?topic=381
+- [⚙️ 简易快速的mpcvr高画质播放方案指南](https://hooke007.github.io/DirectShow+/mpc.html)
+- [基于 MPC-HC 和 madVR 的播放器配置入门](https://vcb-s.com/archives/16609)
+- 萬年冷凍庫：
+  - [系列之2─強大的外掛解碼方案-LAV Filters](https://lysandria1985.blogspot.com/2013/01/2-lav-filters.html)
+  - [系列之3─最強渲染器-madVR](https://lysandria1985.blogspot.com/2013/01/3-madvr.html)
+    - 知乎搬运（上篇）：https://zhuanlan.zhihu.com/p/73960527  
+    - 知乎搬运（下篇）：https://zhuanlan.zhihu.com/p/73968849
+- [Potplayer的合格安装与调校](https://github.com/hooke007/MPV_lazy/discussions/254) - LAV 以及 madVR 部分很值得参考
+  - https://tieba.baidu.com/p/7171344019
