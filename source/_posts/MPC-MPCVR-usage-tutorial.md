@@ -54,7 +54,7 @@ MPC-BE 和 MPC-HC 根据个人喜好二选一即可。
 安装程序有简体中文，大多数选项我相信各位都能看懂，所以我只提一点：  
 在 `选择组件` 这一步请全部勾选，或者至少勾选 `MPC Video Renderer <版本号>`，这样就把 MPCVR 也顺带安装好了（同时请跳过本文的 `安装 MPC Video Renderer` 部分）。
 
-![MPC-BE_Install_Select-Components](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_Install_Select-Components.png)
+![MPC-BE_Install_Select-Components](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_Install_Select-Components.png)
 
 #### 安装 MPC Video Renderer
 
@@ -72,7 +72,7 @@ MPC-HC 的官方版本早已停更，现在是由 clsid2 进行维护。
 安装程序有简体中文，大多数选项我相信各位都能看懂，所以我也是只提一点：
 在 `选择组件` 这一步请保持默认选项（即勾选全部组件）。
 
-![MPC-HC_Install_Select-Components.png](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-HC_Install_Select-Components.png)
+![MPC-HC_Install_Select-Components.png](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-HC_Install_Select-Components.png)
 
 #### 安装 MPC Video Renderer
 
@@ -106,7 +106,7 @@ scoop install mpc-hc
 
 点击 `鼠标右键` -> `选项` 或 `查看` -> `选项` 进入设置
 
-![MPC-BE_Settings](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_Settings.png)
+![MPC-BE_Settings](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_Settings.png)
 
 Tips：更改完别忘了点击右下角的 `应用(A)` 哦~
 
@@ -116,17 +116,17 @@ Tips：更改完别忘了点击右下角的 `应用(A)` 哦~
 
 `音频` -> `音频渲染器` -> `0. MPC Audio Renderer`(即默认选项)
 
-![MPC-BE_Settings-Audio](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_Settings-Audio.png)
+![MPC-BE_Settings-Audio](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_Settings-Audio.png)
 
 `音频` -> `声音处理` -> `声道合成` -> `混合声道至` -> `<根据你的设备更改>`(其中，`立体声` 即 `双声道`)  
 注意：**不要**勾选 `要求解码器输出 2.0 立体声`
 
-![MPC-BE_Settings-Audio-Processing](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_Settings-Audio-Processing.png)
+![MPC-BE_Settings-Audio-Processing](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_Settings-Audio-Processing.png)
 
 `内置滤镜` -> `音频解码器` -> `音频解码器设置` -> `直通 (S/PDIF、HDMI)` -> 部分勾选 `你的设备支持的格式`  
 注意：此部分选项只有拥有高端的音频设备(独立声卡/外置DAC)且需要直通某些格式的音频的用户才需要更改，一般用户无须更改
 
-![MPC-BE_MPCAD](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_MPCAD.png)
+![MPC-BE_MPCAD](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_MPCAD.png)
 
 #### 视频部分
 
@@ -134,7 +134,7 @@ Tips：更改完别忘了点击右下角的 `应用(A)` 哦~
 
 `内置滤镜` -> `视频解码器` -> `视频解码器设置`
 
-![MPC-BE_MPCVD](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_MPCVD.png)
+![MPC-BE_MPCVD](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_MPCVD.png)
 
 - `格式转换` -> `RGB 输出级别` - 选 `PC (0-255)` (即默认值)
 - `硬件加速` -> `首选解码器`
@@ -158,7 +158,7 @@ Tips：更改完别忘了点击右下角的 `应用(A)` 哦~
 
 点击 `鼠标右键` -> `选项` 或 `查看` -> `选项` 进入设置
 
-![MPC-HC_Settings](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-HC_Settings.png)
+![MPC-HC_Settings](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-HC_Settings.png)
 
 Tips：更改完别忘了点击右下角的 `应用(A)` 哦~
 
@@ -166,7 +166,7 @@ Tips：更改完别忘了点击右下角的 `应用(A)` 哦~
 
 `回放` -> `输出` -> `音频渲染器` -> 选择 `MPC 音频渲染器`
 
-![MPC-HC_Settings-Audio](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-HC_Settings-Audio.png)
+![MPC-HC_Settings-Audio](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-HC_Settings-Audio.png)
 
 MPC-HC 还有一个 `SaneAR 音频渲染器` 可用，但我不熟，所以暂时还是推荐使用和 MPC-BE 一样的 `MPC 音频渲染器`
 
@@ -174,7 +174,7 @@ MPC-HC 还有一个 `SaneAR 音频渲染器` 可用，但我不熟，所以暂�
 
 `Mixing` 选项页：
 
-![LAVAD_Mixing](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/LAVAD_Mixing.png)
+![LAVAD_Mixing](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/LAVAD_Mixing.png)
 
 - `Mixer` -> 勾选 `Enable Mixing`
 - `Mixer` -> `Output Spesker Cofiguration` -> `<根据你的设备更改>`（其中 `Stereo` 即为 `双声道/立体声`）
@@ -184,7 +184,7 @@ MPC-HC 还有一个 `SaneAR 音频渲染器` 可用，但我不熟，所以暂�
 `Audio Settings` 选项页：  
 注意：此部分选项只有拥有高端的音频设备(独立声卡/外置DAC)且需要直通某些格式的音频的用户才需要更改，一般用户无须更改
 
-![LAVAD_Audio-Settings](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/LAVAD_Audio-Settings.png)
+![LAVAD_Audio-Settings](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/LAVAD_Audio-Settings.png)
 
 - `Bitstreaming(S/PDIF,HDMI)` -> `Formats` 勾选 `你的设备支持的格式`  
 - 如果不清楚自己的设备支持的格式，可以在 `Bitstreaming(S/PDIF,HDMI)` -> `Options` -> 勾选 `Fallback to PCM if Bitstreaming is not supported`，该选项的意思是不支持直通的格式交给LAV解码。
@@ -195,7 +195,7 @@ MPC-HC 还有一个 `SaneAR 音频渲染器` 可用，但我不熟，所以暂�
 
 `内部滤镜` -> `内部 LAV Filters 设置` -> `视频解码器`
 
-![LAVVD](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/LAVVD.png)
+![LAVVD](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/LAVVD.png)
 
 - `Hardware Acceleration` -> `Hardware Decoder to use:`
   - 如果你使用 MPCVR 或 madVR，请选择 `D3D11`，且不要在下方的 `Hardware Device to Use` 部分选择显卡，保持默认的 `Automatic(native)` 即可
@@ -216,10 +216,10 @@ MPC-HC 还有一个 `SaneAR 音频渲染器` 可用，但我不熟，所以暂�
 
 LAV Filters 的三个组件都能显示托盘图标，在 `内部滤镜` -> `内部 LAV Filters 设置` -> `分离器`/`视频解码器`/`音频解码器` - 勾选左下角的 `Enable System Tray Icon` 即可  
 
-![LAV_Enable-Sysytem-Tray-Icon](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/LAV_Enable-Sysytem-Tray-Icon.png)  
+![LAV_Enable-Sysytem-Tray-Icon](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/LAV_Enable-Sysytem-Tray-Icon.png)  
 效果：  
 
-![LAV_Tray-Icons](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/LAV_Tray-Icons.png)
+![LAV_Tray-Icons](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/LAV_Tray-Icons.png)
 
 ## MPCVR 推荐设置
 
@@ -233,7 +233,7 @@ LAV Filters 的三个组件都能显示托盘图标，在 `内部滤镜` -> `内
 点击 `鼠标右键` -> `选项` 或 `查看` -> `选项` 进入设置  
 `视频` -> `视频渲染器` -> 改为 `MPC 渲染器`
 
-![MPC-BE_Settings_MPCVR](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_Settings_MPCVR.png)
+![MPC-BE_Settings_MPCVR](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_Settings_MPCVR.png)
 
 如果要进入 MPCVR 的设置，请点击右边的 `属性`
 
@@ -242,7 +242,7 @@ LAV Filters 的三个组件都能显示托盘图标，在 `内部滤镜` -> `内
 点击 `鼠标右键` -> `选项` 或 `查看` -> `选项` 进入设置  
 `回放` -> `输出` -> `DirectShow 视频` -> 选择 `MPC 视频渲染器`
 
-![MPC-HC_Settings_MPCVR](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-HC_Settings_MPCVR.png)
+![MPC-HC_Settings_MPCVR](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-HC_Settings_MPCVR.png)
 
 如果要进入 MPCVR 的设置，请点击右边的 `设置`
 
@@ -250,13 +250,13 @@ LAV Filters 的三个组件都能显示托盘图标，在 `内部滤镜` -> `内
 
 进入 MPCVR 的设置界面（方法在本文 `让 MPC-BE/HC 使用 MPCVR 作为视频渲染器` 部分已经提到过），你会看到下图的界面：
 
-![MPCVR_default](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPCVR_default.png)
+![MPCVR_default](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPCVR_default.png)
 
 我不会班门弄斧地详细讲解各个选项的具体作用，如果需要了解，请看 MPC Video Renderer 的官方说明（内容是俄语，请善用翻译）：https://mpc-be.org/forum/index.php?topic=381
 
 进入设置界面后，请根据下文文字内容自行更改（如果懒也可以直接抄下图内容，但我建议对各选项有一定了解后根据个人需要自行更改）
 
-![MPCVR_custom](https://cdn.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPCVR_custom.png)
+![MPCVR_custom](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPCVR_custom.png)
 
 - [左上] 勾选 `Use Direct3D 11` （Windows10/11 默认已勾选）
 - [左上] `Texture format`(运算精度) - 更改为 `16-bit Floating Point`
