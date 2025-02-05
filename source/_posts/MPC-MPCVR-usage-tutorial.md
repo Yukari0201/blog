@@ -166,9 +166,9 @@ Tips：更改完别忘了点击右下角的 `应用(A)` 哦~
 
 `回放` -> `输出` -> `音频渲染器` -> 选择 `MPC 音频渲染器`
 
-![MPC-HC_Settings-Audio](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-HC_Settings-Audio.png)
-
 MPC-HC 还有一个 `SaneAR 音频渲染器` 可用，但我不熟，所以暂时还是推荐使用和 MPC-BE 一样的 `MPC 音频渲染器`
+
+![MPC-HC_Settings-Audio](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-HC_Settings-Audio.png)
 
 `内部滤镜` -> `内部 LAV Filters 设置` -> `音频解码器`
 
@@ -217,6 +217,7 @@ MPC-HC 还有一个 `SaneAR 音频渲染器` 可用，但我不熟，所以暂�
 LAV Filters 的三个组件都能显示托盘图标，在 `内部滤镜` -> `内部 LAV Filters 设置` -> `分离器`/`视频解码器`/`音频解码器` - 勾选左下角的 `Enable System Tray Icon` 即可  
 
 ![LAV_Enable-Sysytem-Tray-Icon](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/LAV_Enable-Sysytem-Tray-Icon.png)  
+
 效果：  
 
 ![LAV_Tray-Icons](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/LAV_Tray-Icons.png)
@@ -233,18 +234,18 @@ LAV Filters 的三个组件都能显示托盘图标，在 `内部滤镜` -> `内
 点击 `鼠标右键` -> `选项` 或 `查看` -> `选项` 进入设置  
 `视频` -> `视频渲染器` -> 改为 `MPC 渲染器`
 
-![MPC-BE_Settings_MPCVR](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_Settings_MPCVR.png)
-
 如果要进入 MPCVR 的设置，请点击右边的 `属性`
+
+![MPC-BE_Settings_MPCVR](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_Settings_MPCVR.png)
 
 #### MPC-HC 使用 MPCVR 作为视频渲染器
 
 点击 `鼠标右键` -> `选项` 或 `查看` -> `选项` 进入设置  
 `回放` -> `输出` -> `DirectShow 视频` -> 选择 `MPC 视频渲染器`
 
-![MPC-HC_Settings_MPCVR](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-HC_Settings_MPCVR.png)
-
 如果要进入 MPCVR 的设置，请点击右边的 `设置`
+
+![MPC-HC_Settings_MPCVR](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-HC_Settings_MPCVR.png)
 
 ### 调整 MPCVR 的设置
 
@@ -266,6 +267,7 @@ LAV Filters 的三个组件都能显示托盘图标，在 `内部滤镜` -> `内
 - [右下] `Wait for V-Blank before Present` - 勾选可能会改善播放的流畅性
 - `DXVA2 and D3D11 video processor` -> `Use for:` 全部取消勾选
   - `DXVA2 and D3D11 video processor` 会代替下文 `Shader video processor` 部分的设置，它的性能最好，但质量取决于显卡，并且可能受显卡驱动的影响导致颜色不准确（我就遇到过画面偏绿和画面偏灰暗的情况），非特殊情况**不建议**使用。
+
 - `Shader video processor` 部分：
   - `Chroma scaling` - 建议 `Catmull-Rom`，性能捉急可以选择 `Bilinear`
     - 此选项选择的算法用于放大 yuv420/422 视频的色度（一般来说感知不是很明显）
@@ -277,10 +279,11 @@ LAV Filters 的三个组件都能显示托盘图标，在 `内部滤镜` -> `内
     - 此选项的意思为：目标尺寸≥源视频的50%时，使用与"Upscaling"相同的算法进行缩小视频画面。  
     是否勾选取决于你的个人喜好，我个人不勾选并在 `Downscaling` 部分使用 `Bicubic sharp` 算法。
   - `Use dithering`(使用抖动) - 强烈建议勾选
+
 - `HDR` 部分  
 这部分因为我没有可用的 HDR 显示器，暂时就不细讲了  
 有这方面需求的用户请根据 MPCVR 官方说明进行更改
-  - `Prefer Dolby Vision over PQ and HLG` 如果看杜比视界的片的话需要勾选
+  - `Prefer Dolby Vision over PQ and HLG` 如果你需要观看 Dolby Vision 内容，请勾选
   - `Passthrough to display` - 如果显示器支持 HDR，请一定勾选
   - `Windows HDR` - 选择 `自动切换至 HDR 模式` 的方式，默认不自动切换
     - 如果显示器支持 HDR，请自行更改此选项
@@ -293,7 +296,7 @@ LAV Filters 的三个组件都能显示托盘图标，在 `内部滤镜` -> `内
 
 ### TODOs
 
-- Nvidia RTX / Intel VSR 的使用教程
+- Nvidia RTX / Intel VSR 的使用教程DirectShow
   - 即 `DXVA2 and D3D11 video processor` -> 勾选 `Use for resizing` -> `Request Super Resolution` 部分
 
 ### 一些有用的教程指路
