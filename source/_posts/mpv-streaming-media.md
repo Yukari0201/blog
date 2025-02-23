@@ -11,8 +11,7 @@ tags:
 我的 mpv 自用配置：https://github.com/Yukari0201/mpv-config
 
 联系阅读：
-[[Tip]使用yt-dlp增强mpv player流媒体解析能力&解锁登陆用户分辨率](https://www.bilibili.com/read/cv21234242)  
-本文是对此篇文章的补充
+[[Tip]使用yt-dlp增强mpv player流媒体解析能力&解锁登陆用户分辨率](https://www.bilibili.com/read/cv21234242)
 
 ## 观前提醒(消歧义)
 
@@ -26,7 +25,21 @@ tags:
 - 使用 MPV 播放（需配合 mpv-handler 使用） https://greasyfork.org/zh-CN/scripts/416271-play-with-mpv
 
 ## 目录
+
 - 在正文开始前讲一下 mpv 播放器如何播放在线视频
+  - 直接拖链接
+  - 内置控制台脚本(console.lua)用法
+  - 命令行用法
+- 缓存(cache)相关
+- 内置的 ytdl_hook 脚本相关
+  - 前提条件
+  - ytdl_hook 脚本配置
+    - 常规选项部分
+    - `--ytdl-raw-options` 部分
+    - `script-opts/ytdl_hook.conf` 部分(`--script-opts` 部分)
+- 代理相关
+  - 在 `mpv.conf` 中设置代理
+  - 通过环境变量 `http_proxy` 来设置代理
 
 ## 在正文开始前讲一下 mpv 播放器如何播放在线视频
 
@@ -48,7 +61,7 @@ loadfile <视频链接>
 loadfile https://www.bilibili.com/video/BV1qM4y1w716/
 ```
 
-注意：视频链接中不能有特殊字符，如果有，请将视频链接用半角引号( "" 或 '' )包裹起来
+**注意**：视频链接中不能有特殊字符，如果有，请将视频链接用半角引号(`""` 或 `''`)包裹起来
 
 ### 命令行用法
 
@@ -56,9 +69,9 @@ loadfile https://www.bilibili.com/video/BV1qM4y1w716/
 ```
 mpv <视频链接>
 ```
-注意：视频链接中不能有特殊字符，如果有，请将视频链接用半角引号( "" 或 '' )包裹起来
+**注意**：视频链接中不能有特殊字符，如果有，请将视频链接用半角引号(`""` 或 `''`)包裹起来
 
-## 缓存(cache) 部分
+## 缓存(cache)相关
 
 mpv 播放器的缓存(cache)用来提前读取数据，提供更流畅的播放体验，避免播放过程中的卡顿或跳帧（常见原因：网络波动、磁盘延迟）
 
@@ -101,7 +114,7 @@ demuxer-hysteresis-secs=10
 `--demuxer-max-back-bytes` 最大允许保留的已播放的内容的数据大小，默认 50MiB  
 注意！这和**向前缓存**不尽相同。  
 解释起来有点麻烦，我放张图吧...  
-![--demuxer-max-back-bytes]()  
+![--demuxer-max-back-bytes](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/mpv-streaming-media/--demuxer-max-back-bytes.png)  
 
 > `--demuxer-hysteresis-secs=10`
 
@@ -125,13 +138,14 @@ Windows 用户：
 yt-dlp 官方 Github Releases: https://github.com/yt-dlp/yt-dlp/releases
 
 Linux 用户：  
-建议直接看 yt-dlp 的 Wiki：https://github.com/yt-dlp/yt-dlp/wiki/Installation
+常见的发行版通过包管理器安装即可  
+其他建议直接看 yt-dlp 的 Wiki：https://github.com/yt-dlp/yt-dlp/wiki/Installation
 
 ### ytdl_hook 脚本配置
 
 #### 常规选项部分
 
-参见 https://mpv.io/manual/master/#options-ytdl
+参见: https://mpv.io/manual/master/#options-ytdl
 
 ```
 ytdl=yes
@@ -145,15 +159,17 @@ ytdl-format = bestvideo+bestaudio/best
 ```
 **默认的配置已经足够使用，非必要不建议更改**
 
-#### --ytdl-raw-options 部分
+#### `--ytdl-raw-options` 部分
 
-`--ytdl-raw-options` 用于将自定义选项传递给 yt-dlp，可用选项参见 https://github.com/yt-dlp/yt-dlp#usage-and-options  
+参见: https://mpv.io/manual/master/#options-ytdl-raw-options
+
+`--ytdl-raw-options` 用于将自定义选项传递给 yt-dlp，可用选项参见: https://github.com/yt-dlp/yt-dlp#usage-and-options  
 选项应为选项参数键值成对的方式传递(`<key>=<value>`)，没有参数的选项后面必须加上等号 `=`  
 多个键值对之间用半角逗号","隔开，例如：  
 ```
 ytdl-raw-options=write-subs=,force-ipv6=,sub-langs=[zh,en]
 ```
-当然，实际使用时，更推荐使用多个 `--ytdl-raw-options-append`，如下：
+实际使用时，更推荐使用多个 `--ytdl-raw-options-append`，例如上面的选项也可以写为：
 ```
 ytdl-raw-options-append=write-subs=
 ytdl-raw-options-append=force-ipv6=
@@ -177,10 +193,11 @@ ytdl-raw-options-append=yes-playlist=
 # 解析字幕
 ytdl-raw-options-append=write-subs=
 
-# 限制字幕语言，可以使用正则表达式
-ytdl-raw-options-append=sub-langs=ai.*,zh.*,en.*
-# 其实不用这个选项也足以应对大多数场景
-# 放在这里只是作为演示，以及照顾一下需要的用户
+# 限制选择字幕语言
+ytdl-raw-options-append=sub-langs=all
+# sub-langs=all 表示选择所有字幕
+# 你可以使用正则表达式来限制选择字幕语言，例如：
+#ytdl-raw-options-append=sub-langs=ai.*,zh.*,en.*,ja.*
 ```
 
 [Tips] 你可以命令行运行如下命令来导出 Firefox 浏览器的 cookies 为 `cookies.txt`，其他浏览器也同理  
@@ -188,11 +205,11 @@ ytdl-raw-options-append=sub-langs=ai.*,zh.*,en.*
 yt-dlp --cookies cookies.txt --cookies-from-browser firefox
 ```
 
-#### script-opts/ytdl_hook.conf 部分（--script-opts 部分）
+#### `script-opts/ytdl_hook.conf` 部分(`--script-opts` 部分)
 
 mpv 实际上是通过内置的 ytdk_hook 脚本调用 yt-dlp 的，所以类似于其他脚本，它也可以通过在 mpv 设置文件夹的 script-opts 文件夹中新建一个 ytdl_hook.conf 来设置脚本选项
 
-**注意**：ytdl_hook.conf 文件的编码应为 UTF-8，换行应为 LF(Unix)
+**注意**：`ytdl_hook.conf` 文件的编码应为 UTF-8，换行应为 LF(Unix)
 
 所有可用的选项看官方手册：https://mpv.io/manual/master/#options-ytdl
 
@@ -202,5 +219,39 @@ mpv 实际上是通过内置的 ytdk_hook 脚本调用 yt-dlp 的，所以类似
 
 听不懂请直接跳过
 
-TODO...
+部分代理软件支持 Tun 方式或 TProxy/Redirect 方式设置透明代理，如果你正在使用，可以跳过此部分
 
+由于 mpv 不会使用系统代理设置，所以如果想要播放某些地域限制的 URL，需要手动设置代理
+
+以下两种方式**任选其一**即可
+
+### 在 `mpv.conf` 中设置代理
+
+参见:  
+https://mpv.io/manual/master/#options-http-proxy  
+https://mpv.io/manual/master/#options-ytdl-raw-options
+
+```
+# 你应该将下面的 http://127.0.0.1:3128 自行更改为你的代理地址
+# 我只不过是将官方文档的示例照抄过来了而已
+
+# 让 mpv 使用 http(s) 代理
+http-proxy=http://127.0.0.1:3128
+# 让 yt-dlp 使用 http(s) 代理
+ytdl-raw-options-append=proxy=http://127.0.0.1:3128
+# 虽然 yt-dlp 支持 socks，但由于此选项的值会被传递给 mpv，所以还是只能使用 http 代理
+```
+
+### 通过环境变量 `http_proxy` 来设置代理
+
+参见: https://mpv.io/manual/master/#environment-variables-http-proxy
+
+推荐用于 Linux 用户
+
+经我测试，yt-dlp 也会使用此环境变量设置的代理，所以不必再在 mpv.conf 中作其他设置
+
+将环境变量 `http_proxy` 的值自行设置为你的代理地址即可，**只支持 http 类型的代理**，例如 `http://127.0.0.1:3128`
+
+具体设置方式:  
+- Linux: 请参考 [ArchWiki](https://wiki.archlinux.org/title/Environment_variables) 或 [Arch Linux 中文维基](https://wiki.archlinuxcn.org/wiki/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
+- Windwos: TODO
