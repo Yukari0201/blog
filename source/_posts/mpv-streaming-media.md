@@ -108,7 +108,7 @@ demuxer-hysteresis-secs=10
 
 注意: `--demuxer-max-back-bytes` 和**向前缓存**不尽相同。  
 文字解释起来有点麻烦，我放张图吧...  
-![--demuxer-max-back-bytes](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/mpv-streaming-media/--demuxer-max-back-bytes.png)  
+![--demuxer-max-back-bytes](--demuxer-max-back-bytes.png)  
 
 ## 内置的 ytdl_hook 脚本相关
 
