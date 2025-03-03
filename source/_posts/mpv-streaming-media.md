@@ -143,7 +143,7 @@ ytdl=yes
 # 可选值 <yes|no>(默认值: yes)
 
 # 设置直接传递给 youtube-dl 的视频格式/质量，示例即为默认值
-ytdl-format = bestvideo+bestaudio/best
+ytdl-format=bestvideo+bestaudio/best
 # 这部分怎么写应该查看 yt-dlp 的文档，我记得是在这里 https://github.com/yt-dlp/yt-dlp#format-selection  
 ```
 
