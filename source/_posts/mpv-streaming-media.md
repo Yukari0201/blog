@@ -38,7 +38,7 @@ tags:
     - `--ytdl-raw-options` 部分
     - `script-opts/ytdl_hook.conf` 部分(`--script-opts` 部分)
 - 代理相关
-  - 在 `mpv.conf` 中设置代理
+  - [推荐] 在 `mpv.conf` 中设置代理
   - 通过环境变量 `http_proxy` 来设置代理
 
 ## mpv 播放器如何播放在线视频
@@ -144,7 +144,8 @@ ytdl=yes
 
 # 设置直接传递给 youtube-dl 的视频格式/质量，示例即为默认值
 ytdl-format=bestvideo+bestaudio/best
-# 这部分怎么写应该查看 yt-dlp 的文档，我记得是在这里 https://github.com/yt-dlp/yt-dlp#format-selection  
+# 这部分怎么写应该查看 yt-dlp 的文档
+# https://github.com/yt-dlp/yt-dlp#format-selection  
 ```
 
 **默认的配置已经足够使用，非必要不建议更改**
@@ -155,7 +156,7 @@ ytdl-format=bestvideo+bestaudio/best
 
 `--ytdl-raw-options` 用于将自定义选项传递给 yt-dlp，可用选项参见: https://github.com/yt-dlp/yt-dlp#usage-and-options  
 选项应为选项参数键值成对的方式传递(`<key>=<value>`)，没有参数的选项后面必须加上等号 `=`  
-多个键值对之间用半角逗号","隔开，例如：  
+多个键值对之间用半角逗号 `,` 隔开，例如：  
 ```ini
 ytdl-raw-options=write-subs=,force-ipv6=,sub-langs=[zh,en]
 ```
@@ -190,7 +191,7 @@ ytdl-raw-options-append=sub-langs=all
 #ytdl-raw-options-append=sub-langs=ai.*,zh.*,en.*,ja.*
 ```
 
-[Tips] 你可以命令行运行如下命令来导出 Firefox 浏览器的 cookies 为 `cookies.txt`，其他浏览器也同理  
+[Tips] 你可以命令行运行如下命令导出 Firefox 浏览器的 cookies 为 `cookies.txt`，其他浏览器也同理  
 ```
 yt-dlp --cookies cookies.txt --cookies-from-browser firefox
 ```
@@ -213,9 +214,9 @@ mpv 实际上是通过内置的 ytdk_hook 脚本调用 yt-dlp 的，所以类似
 
 由于 mpv 不会使用系统代理设置，所以如果想要播放某些地域限制的 URL，需要手动设置代理
 
-以下两种方式**任选其一**即可
+以下两种方式**选择其中一种**即可
 
-### 在 `mpv.conf` 中设置代理
+### [推荐] 在 `mpv.conf` 中设置代理
 
 参见:  
 https://mpv.io/manual/master/#options-http-proxy  
@@ -236,9 +237,7 @@ ytdl-raw-options-append=proxy=http://127.0.0.1:3128
 
 参见: https://mpv.io/manual/master/#environment-variables-http-proxy
 
-推荐用于 Linux 用户
-
-经我测试，yt-dlp 也会使用此环境变量设置的代理，所以不必再在 mpv.conf 中作其他设置
+经我测试，yt-dlp 也会使用此环境变量设置的代理，所以不必再在 `mpv.conf` 中作其他设置
 
 将环境变量 `http_proxy` 的值自行设置为你的代理地址即可，**只支持 http 类型的代理**，例如 `http://127.0.0.1:3128`
 
