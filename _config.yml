@@ -103,7 +103,8 @@ theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: "git"
-  repo: https://github.com/Yukari0201/blog
-  branch: master
+# deploy:
+#   type: git
+#   repo: <repository url> # https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+#   branch: [branch]
+#   message: [message]
