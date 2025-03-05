@@ -297,7 +297,7 @@ LAV Filters 的三个组件都能显示托盘图标，在 `内部滤镜` -> `内
 
 ### TODOs
 
-- Nvidia RTX / Intel VSR 的使用教程DirectShow
+- Nvidia RTX / Intel VSR 的使用教程
   - 即 `DXVA2 and D3D11 video processor` -> 勾选 `Use for resizing` -> `Request Super Resolution` 部分
 
 ### 一些有用的教程指路
