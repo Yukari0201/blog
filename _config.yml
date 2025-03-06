@@ -44,11 +44,15 @@ post_asset_folder: true
 marked:
   prependRoot: true
   postAsset: true
+  external_link:
+    enable: true
+    exclude: ["yukari0201.github.io"]
+    nofollow: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
 highlight:
-  line_number: true
+  line_number: true # Open external links in new tab
   auto_detect: false
   tab_replace: ""
   wrap: true
@@ -100,7 +104,6 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
-
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 # deploy:
