@@ -111,3 +111,10 @@ theme: next
 #   repo: <repository url> # https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
 #   branch: [branch]
 #   message: [message]
+
+# Search
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
