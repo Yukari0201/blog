@@ -1,7 +1,7 @@
 ---
 title: 优化 mpv 播放器的在线视频体验
 date: 2025-02-08 11:56:25
-updated: 2025-03-03 19:32
+updated: 2025-03-08 15:05
 tags:
 - mpv
 - Media Player
@@ -41,6 +41,9 @@ tags:
 - 代理相关
   - [推荐] 在 `mpv.conf` 中设置代理
   - 通过环境变量 `http_proxy` 来设置代理
+- (补充) 优化 Bilibili 视频的观看体验
+  - [推荐] 使用 bilibiliAssert 脚本
+- (补充) 使用 mpv-quality-menu 脚本在播放时调整音视频质量
 
 ## mpv 播放器如何播放在线视频
 
@@ -159,13 +162,12 @@ ytdl-format=bestvideo+bestaudio/best
 选项应为选项参数键值成对的方式传递(`<key>=<value>`)，没有参数的选项后面必须加上等号 `=`  
 多个键值对之间用半角逗号 `,` 隔开，例如：  
 ```ini
-ytdl-raw-options=write-subs=,force-ipv6=,sub-langs=[zh,en]
+ytdl-raw-options=write-subs=,force-ipv6=
 ```
 实际使用时，更推荐使用多个 `--ytdl-raw-options-append`，例如上面的选项也可以写为：
 ```ini
 ytdl-raw-options-append=write-subs=
 ytdl-raw-options-append=force-ipv6=
-ytdl-raw-options-append=sub-langs=zh,en
 ```
 
 我挑出了几个比较有用的选项，列在下面：  
@@ -245,3 +247,41 @@ ytdl-raw-options-append=proxy=http://127.0.0.1:3128
 具体设置方式:  
 - Linux: 请参考 [ArchWiki](https://wiki.archlinux.org/title/Environment_variables) 或 [Arch Linux 中文维基](https://wiki.archlinuxcn.org/wiki/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
 - Windwos: TODO
+
+## (补充) 优化 Bilibili 视频的观看体验
+
+在读完上述部分后，各位读者可能会遇到一个问题，当 `mpv.conf` 文件中存在如下部分时，如果播放B站视频，会多出一个 `slang`(字幕语言) 为 `danmaku` 的字幕，切换至此字幕会导致卡死
+```ini
+# 限制选择字幕语言
+ytdl-raw-options-append=sub-langs=all
+# sub-langs=all 表示选择所有字幕
+```
+
+例如下图中，如果切换至 `danmaku` 字幕，mpv 播放器画面会卡死  
+![sub-langs=all](sub-langs=all.png) 
+
+原因：`danmaku` 是 xml 格式的 B站弹幕，mpv 无法正常渲染，所以切换过去会卡死
+
+解决方案有两种，先说最简单的一种：  
+将上面的内容改为：
+```ini
+# 限制选择字幕语言
+ytdl-raw-options-append=sub-langs=all,-danmaku
+# sub-langs=all,-danmaku 表示选择所有字幕，并排除 danmaku 字幕
+```
+
+此时字幕列表中便不会有 `danmaku` 字幕，比如下图：  
+![sub-langs=all,-danmaku](sub-langs=all,-danmaku.png)
+
+### [推荐] 使用 bilibiliAssert 脚本
+
+如果你想看到 B站的弹幕，那么可以使用 MPV-Play-BiliBili-Comments(bilibiliAssert)，即第二种解决方案
+
+使用方式：  
+访问 MPV-Play-BiliBili-Comments 的 [Github 项目地址](https://github.com/itKelis/MPV-Play-BiliBili-Comments)，点击右侧的绿色的 `Code`，然后点击 `Download ZIP` 下载项目源码(下载下的文件名一般为 `MPV-Play-BiliBili-Comments-main.zip`)  
+然后解压压缩文件，并将里面的 `bilibiliAssert` 文件夹解压至 `<你的 mpv 配置文件夹>\scripts\`
+
+最终你的 mpv 配置文件夹应该类似于下图  
+![mpv-config](mpv-config.png)
+
+如果需要定制化弹幕样式，请自行查看项目 Readme
