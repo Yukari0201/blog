@@ -29,11 +29,6 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
-      - name: Restore last modified time
-        run: |
-          git ls-files -z | while read -d '' path; do
-            touch -d "$(git log -1 --format="@%ct" "$path")" "$path"
-          done
       - name: Build
         run: npm run build
       - name: Upload Pages artifact

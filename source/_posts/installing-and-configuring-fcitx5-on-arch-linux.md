@@ -1,6 +1,7 @@
 ---
 title: Arch Linux 安装和配置 Fcitx5 输入法
 date: 2023-12-09 18:11:39
+updated: 2024-09-29 17:46
 tags:
 - Arch
 - Fcitx5
