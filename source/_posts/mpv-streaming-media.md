@@ -1,7 +1,7 @@
 ---
 title: 优化 mpv 播放器的在线视频体验
 date: 2025-02-08 11:56:25
-updated: 2025-03-08 15:05
+updated: 2025-03-08 20:37
 tags:
 - mpv
 - Media Player
@@ -162,12 +162,13 @@ ytdl-format=bestvideo+bestaudio/best
 选项应为选项参数键值成对的方式传递(`<key>=<value>`)，没有参数的选项后面必须加上等号 `=`  
 多个键值对之间用半角逗号 `,` 隔开，例如：  
 ```ini
-ytdl-raw-options=write-subs=,force-ipv6=
+ytdl-raw-options=write-subs=,force-ipv6=,sub-langs=[zh,en]
 ```
 实际使用时，更推荐使用多个 `--ytdl-raw-options-append`，例如上面的选项也可以写为：
 ```ini
 ytdl-raw-options-append=write-subs=
 ytdl-raw-options-append=force-ipv6=
+ytdl-raw-options-append=sub-langs=zh,en
 ```
 
 我挑出了几个比较有用的选项，列在下面：  
