@@ -43,7 +43,6 @@ tags:
   - 通过环境变量 `http_proxy` 来设置代理
 - (补充) 优化 Bilibili 视频的观看体验
   - [推荐] 使用 bilibiliAssert 脚本
-- (补充) 使用 mpv-quality-menu 脚本在播放时调整音视频质量
 
 ## mpv 播放器如何播放在线视频
 
@@ -276,7 +275,7 @@ ytdl-raw-options-append=sub-langs=all,-danmaku
 
 ### [推荐] 使用 bilibiliAssert 脚本
 
-如果你想看到 B站的弹幕，那么可以使用 MPV-Play-BiliBili-Comments(bilibiliAssert)，即第二种解决方案
+如果你想看到 B站的弹幕，那么可以使用 MPV-Play-BiliBili-Comments(bilibiliAssert) 脚本，即第二种解决方案
 
 使用方式：  
 访问 MPV-Play-BiliBili-Comments 的 [Github 项目地址](https://github.com/itKelis/MPV-Play-BiliBili-Comments)，点击右侧的绿色的 `Code`，然后点击 `Download ZIP` 下载项目源码(下载下的文件名一般为 `MPV-Play-BiliBili-Comments-main.zip`)  
