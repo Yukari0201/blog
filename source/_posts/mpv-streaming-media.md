@@ -281,7 +281,21 @@ ytdl-raw-options-append=sub-langs=all,-danmaku
 访问 MPV-Play-BiliBili-Comments 的 [Github 项目地址](https://github.com/itKelis/MPV-Play-BiliBili-Comments)，点击右侧的绿色的 `Code`，然后点击 `Download ZIP` 下载项目源码(下载下的文件名一般为 `MPV-Play-BiliBili-Comments-main.zip`)  
 然后解压压缩文件，并将里面的 `bilibiliAssert` 文件夹解压至 `<你的 mpv 配置文件夹>\scripts\`
 
-最终你的 mpv 配置文件夹应该类似于下图  
-![mpv-config](mpv-config.png)
+最终你的 mpv 配置文件夹应该类似于下面所示  
+```
+~/.config/mpv/ 或 portable_config/
+├── script-opts/
+│   └── *.conf (你的脚本的配置文件)
+├── scripts/
+│   ├── bilibiliAssert/
+│   │   ├── Danmu2Ass.exe
+│   │   ├── Danmu2Ass.py
+│   │   └── main.lua
+│   └── *.lua (你的其他脚本)
+│── shaders/
+│   └── *.glsl (你的着色器)
+├── input.conf
+└── mpv.conf
+```
 
 如果需要定制化弹幕样式，请自行查看项目 Readme
