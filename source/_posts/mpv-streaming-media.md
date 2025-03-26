@@ -44,6 +44,7 @@ categories:
 - 代理相关
   - [推荐] 在 `mpv.conf` 中设置代理
   - 通过环境变量 `http_proxy` 来设置代理
+- (补充) 脚本 [mpv-quality-menu](https://github.com/christoph-heinrich/mpv-quality-menu) 的使用介绍
 - (补充) 优化 Bilibili 视频的观看体验
   - [推荐] 使用 bilibiliAssert 脚本
 
@@ -251,6 +252,43 @@ ytdl-raw-options-append=proxy=http://127.0.0.1:3128
 - Linux: 请参考 [ArchWiki](https://wiki.archlinux.org/title/Environment_variables) 或 [Arch Linux 中文维基](https://wiki.archlinuxcn.org/wiki/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
 - Windwos: TODO
 
+## (补充) 脚本 [mpv-quality-menu](https://github.com/christoph-heinrich/mpv-quality-menu) 的使用介绍
+
+脚本 [mpv-quality-menu](https://github.com/christoph-heinrich/mpv-quality-menu) 的功能：让你可以在播放在线视频时更改在线音视频流质量。
+
+![mpv-quality-menu](mpv-quality-menu.png)
+
+介绍完功能，那么接下来就该介绍如何使用了：
+
+访问 mpv-quality-menu 的 [Github Releases](https://github.com/christoph-heinrich/mpv-quality-menu/releases)，下载 `quality-menu.lua`，并将其放入 `<你的mpv配置文件夹>\scripts\`
+
+然后编辑 `input.conf`，写入如下两行：
+```
+F     script-binding quality_menu/video_formats_toggle
+Alt+f script-binding quality_menu/audio_formats_toggle
+```
+
+意为：按 大写`F` 选择视频流质量，按 `Alt+f` 选择音频流质量。  
+你也可以更改为你喜欢的快捷键。
+
+如果想更改脚本设置，请将 Github Releases 部分的 `quality-menu.conf` 也一并下载下来，放入 `<你的mpv配置文件夹>\scripts-opts\`，并参考注释自行更改其中的选项。  
+**注意**：`quality-menu.conf` 文件的编码应为 UTF-8，换行应为 LF(Unix)
+
+最终你的 mpv 配置文件夹结构应该类似于下面这样
+```
+~/.config/mpv/ 或 portable_config/
+├── script-opts/
+│   ├── quality-menu.conf
+│   └── *.conf (你的脚本的配置文件)
+├── scripts/
+│   ├── quality-menu.lua
+│   └── *.lua (你的其他脚本)
+│── shaders/
+│   └── *.glsl (你的着色器)
+├── input.conf
+└── mpv.conf
+```
+
 ## (补充) 优化 Bilibili 视频的观看体验
 
 在读完上述部分后，各位读者可能会遇到一个问题，当 `mpv.conf` 文件中存在如下部分时，如果播放B站视频，会多出一个 `slang`(字幕语言) 为 `danmaku` 的字幕，切换至此字幕会导致卡死
@@ -284,7 +322,7 @@ ytdl-raw-options-append=sub-langs=all,-danmaku
 访问 MPV-Play-BiliBili-Comments 的 [Github 项目地址](https://github.com/itKelis/MPV-Play-BiliBili-Comments)，点击右侧的绿色的 `Code`，然后点击 `Download ZIP` 下载项目源码(下载下的文件名一般为 `MPV-Play-BiliBili-Comments-main.zip`)  
 然后解压压缩文件，并将里面的 `bilibiliAssert` 文件夹解压至 `<你的 mpv 配置文件夹>\scripts\`
 
-最终你的 mpv 配置文件夹应该类似于下面所示  
+最终你的 mpv 配置文件夹应该类似于下面这样  
 ```
 ~/.config/mpv/ 或 portable_config/
 ├── script-opts/
