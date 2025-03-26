@@ -6,6 +6,8 @@ tags:
 - Arch
 - Fcitx5
 - GNOME
+categories:
+- Linux
 ---
 
 桌面环境：

@@ -5,6 +5,9 @@ updated: 2025-03-13 19:04
 tags:
 - mpv
 - Media Player
+categories:
+- Media Player
+- mpv
 ---
 
 ## 开始之前的一点私货（逃

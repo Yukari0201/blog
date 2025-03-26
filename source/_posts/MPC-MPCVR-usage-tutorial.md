@@ -8,6 +8,8 @@ tags:
 - MPC-BE
 - MPC-HC
 - Media Player
+categories:
+- Media Player
 ---
 
 ## 观前声明
