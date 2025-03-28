@@ -12,5 +12,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://yukari0201.github.io/blog/sitemap.xml
-Sitemap: https://yukari0201.github.io/blog/baidusitemap.xml
+Sitemap: https://yukari0201.github.io/sitemap.xml
+Sitemap: https://yukari0201.github.io/baidusitemap.xml
