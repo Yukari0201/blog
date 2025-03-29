@@ -112,6 +112,13 @@ theme: next
 #   branch: [branch]
 #   message: [message]
 
+# Feed (hexo-generator-feed)
+feed:
+  enable: true
+  # Generate both atom and rss2 feeds
+  type: atom
+  path: atom.xml
+
 # Search
 search:
   path: search.xml
@@ -119,6 +126,7 @@ search:
   content: true
   format: html
 
+# sitemap
 sitemap:
   path:
     - sitemap.xml
@@ -126,9 +134,6 @@ sitemap:
   rel: false
   tags: true
   categories: true
-
-baidusitemap:
-  path: baidusitemap.xml
 
 # hexo-optimize https://github.com/next-theme/hexo-optimize
 filter_optimize:
