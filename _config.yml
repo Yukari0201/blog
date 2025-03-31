@@ -52,7 +52,7 @@ relative_link: false
 future: true
 syntax_highlighter: highlight.js
 highlight:
-  line_number: true # Open external links in new tab
+  line_number: false # Open external links in new tab
   auto_detect: false
   tab_replace: ""
   wrap: true
