@@ -1,7 +1,7 @@
 ---
 title: MPC-BE/HC + MPCVR 使用教程
 date: 2025-01-05 20:16:45
-updated: 2025-03-05 17:32
+updated: 2025-04-01 09:04:01
 tags:
 - Windows
 - DirectShow
@@ -300,7 +300,7 @@ LAV Filters 的三个组件都能显示托盘图标，在 `内部滤镜` -> `内
 
 ### TODOs
 
-- Nvidia RTX / Intel VSR 的使用教程
+- ~~Nvidia RTX / Intel VSR 的使用教程~~ (不打算写了)
   - 即 `DXVA2 and D3D11 video processor` -> 勾选 `Use for resizing` -> `Request Super Resolution` 部分
 
 ### 一些有用的教程指路
