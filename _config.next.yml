@@ -734,7 +734,7 @@ gitalk:
 # Utterances
 # For more information: https://utteranc.es
 utterances:
-  enable: true
+  enable: false
   repo: Yukari0201/yukari0201.github.io # Github repository owner and name
   # Available values: pathname | url | title | og:title
   issue_term: pathname
@@ -745,6 +745,8 @@ utterances:
 # For more information: https://isso-comments.de
 isso: # <data_isso>
 
+# giscus
+# For more information: https://giscus.app
 giscus:
   enable: true
   repo: Yukari0201/yukari0201.github.io # Github repository name
@@ -758,7 +760,7 @@ giscus:
    # Available values: 0 | 1
   emit_metadata: 1
   # Available values: light | light_high_contrast | light_protanopia | light_tritanopia | dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | preferred_color_scheme | transparent_dark | noborder_light | noborder_dark | noborder_gray | cobalt | purple_dark
-  theme: dark
+  theme: noborder_gray
   # Available values: en | zh-CN
   lang: zh-CN
   # Place the comment box above the comments
