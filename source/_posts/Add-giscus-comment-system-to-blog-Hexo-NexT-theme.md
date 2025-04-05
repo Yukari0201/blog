@@ -120,7 +120,8 @@ hexo server
 
 ## (补充) 从 Utterances/Gitalk 迁到 Giscus
 
-请参考：https://docs.github.com/en/discussions/managing-discussions-for-your-community/moderating-discussions#converting-an-issue-to-a-discussion
+请参考：  
+https://docs.github.com/en/discussions/managing-discussions-for-your-community/moderating-discussions#converting-an-issue-to-a-discussion
 
 将已有的 Issue 转换为 Discussion 即可，这样就可以继承已有的评论，实现几乎无缝迁移
 
