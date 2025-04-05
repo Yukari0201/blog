@@ -3,6 +3,7 @@ title: 为个人博客添加 Giscus 评论系统 (Hexo + NexT 主题)
 tags: blog
 categories: blog
 date: 2025-04-05 15:27:36
+updated: 2025-04-05 17:58:01
 ---
 
 
@@ -117,7 +118,13 @@ hexo server
 - 对于一键部署的博客来说，只需要运行 `hexo generate -d` 即可
 - 对于使用 GitHub Actions 来部署的博客来说（比如我的博客），只需要提交(commit)并推送(push)即可
 
-### 碎碎念
+## (补充) 从 Utterances/Gitalk 迁到 Giscus
+
+请参考：https://docs.github.com/en/discussions/managing-discussions-for-your-community/moderating-discussions#converting-an-issue-to-a-discussion
+
+将已有的 Issue 转换为 Discussion 即可，这样就可以继承已有的评论，实现几乎无缝迁移
+
+## 碎碎念
 
 你可以在 https://github.com/Yukari0201/yukari0201.github.io 看到我的博客的所有源代码，所以，放心评论叭
 
