@@ -1,5 +1,5 @@
 ---
-title: 为个人博客添加 Giscus 评论系统 (Hexo + Next 主题)
+title: 为个人博客添加 Giscus 评论系统 (Hexo + NexT 主题)
 tags: blog
 categories: blog
 date: 2025-04-05 15:27:36
