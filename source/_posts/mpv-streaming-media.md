@@ -1,7 +1,7 @@
 ---
 title: 优化 mpv 播放器的在线视频体验
 date: 2025-02-08 11:56:25
-updated: 2025-03-13 19:04
+updated: 2025-04-07 18:18:01
 tags:
 - mpv
 - Media Player
@@ -283,7 +283,7 @@ Alt+f script-binding quality_menu/audio_formats_toggle
 ├── scripts/
 │   ├── quality-menu.lua
 │   └── *.lua (你的其他脚本)
-│── shaders/
+├── shaders/
 │   └── *.glsl (你的着色器)
 ├── input.conf
 └── mpv.conf
@@ -322,6 +322,9 @@ ytdl-raw-options-append=sub-langs=all,-danmaku
 访问 MPV-Play-BiliBili-Comments 的 [Github 项目地址](https://github.com/itKelis/MPV-Play-BiliBili-Comments)，点击右侧的绿色的 `Code`，然后点击 `Download ZIP` 下载项目源码(下载下的文件名一般为 `MPV-Play-BiliBili-Comments-main.zip`)  
 然后解压压缩文件，并将里面的 `bilibiliAssert` 文件夹解压至 `<你的 mpv 配置文件夹>\scripts\`
 
+Windows 用户：如果你的系统中安装了 Python，并且将 Python 添加到了环境变量 PATH 中，那么可以删除掉 `Danmu2Ass.exe`  
+Linux & macOS 用户：必须安装 Python，可以且建议删除掉 `Danmu2Ass.exe`
+
 最终你的 mpv 配置文件夹应该类似于下面这样  
 ```
 ~/.config/mpv/ 或 portable_config/
@@ -333,7 +336,7 @@ ytdl-raw-options-append=sub-langs=all,-danmaku
 │   │   ├── Danmu2Ass.py
 │   │   └── main.lua
 │   └── *.lua (你的其他脚本)
-│── shaders/
+├── shaders/
 │   └── *.glsl (你的着色器)
 ├── input.conf
 └── mpv.conf
