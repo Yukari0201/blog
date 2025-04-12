@@ -138,9 +138,9 @@ Tips：更改完别忘了点击右下角的 `应用(A)` 哦~
 
 `内置滤镜` -> `视频解码器` -> `视频解码器设置`
 
-![MPC-BE_MPCVD](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_MPCVD.png)
+![MPC-BE_MPCVD](https://gcore.jsdelivr.net/gh/Yukari0201/Blog-CDN@main/images/MPC-MPCVR-usage-tutorial/MPC-BE_MPCVD_v2.png)
 
-- `格式转换` -> `RGB 输出级别` - 选 `PC (0-255)` (即默认值)
+- `输出格式` -> **不勾选** `转换为RGB` (即保持默认)
 - `硬件加速` -> `首选解码器`
   - 如果你使用 MPCVR 或 madVR，保持默认的 `D3D11, DXVA2` 即可  
     - 选项的意思是，首先尝试使用 `D3D11 (Native)` 硬件解码，失败（例如其他不兼容 `D3D11 (Native)` 的视频渲染器，像是 `EVR`）则使用 `DXVA2 (Native)` 硬件解码  
