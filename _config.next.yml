@@ -164,6 +164,7 @@ social:
   #YouTube: https://youtube.com/yourname || fab fa-youtube
   #Instagram: https://instagram.com/yourname || fab fa-instagram
   #Skype: skype:yourname?call|chat || fab fa-skype
+  Bilibili: https://space.bilibili.com/3546567529204536 || fab fa-bilibili
 
 social_icons:
   enable: true
