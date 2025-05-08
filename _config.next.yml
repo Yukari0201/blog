@@ -295,7 +295,7 @@ related_posts:
 # Easily browse and edit blog source code online.
 post_edit:
   enable: true
-  url: https://github.com/Yukari0201/yukari0201.github.io/tree/hexo/source/_posts/ # Link for view source
+  # url: https://github.com/Yukari0201/yukari0201.github.io/tree/hexo/source/_posts/ # Link for view source
   url: https://github.com/Yukari0201/yukari0201.github.io/edit/hexo/source/_posts/ # Link for fork & edit
 
 # Show previous post and next post in post footer if exists
