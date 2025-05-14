@@ -5,7 +5,7 @@ tags:
   - gh-proxy
   - GitHub
 date: 2025-05-13 18:16:44
-updated: 2025-05-14 17:07:01
+updated: 2025-05-14 17:11:01
 ---
 
 
@@ -24,7 +24,11 @@ https://ghproxy.yukari0201.ggff.net/
 - 一个可以托管在 Cloudflare 的域名（可选）
 
 {% note warning %}
-注意：Cloudflare Workers 默认的 worker.dev 域名无法在国内正常访问，如果需要在国内使用，则**必须**绑定一个域名
+
+#### 注意
+
+Cloudflare Workers 默认的 worker.dev 域名无法在国内正常访问，如果需要在国内使用，则**必须**绑定一个域名
+
 {% endnote %}
 
 ## 部署
