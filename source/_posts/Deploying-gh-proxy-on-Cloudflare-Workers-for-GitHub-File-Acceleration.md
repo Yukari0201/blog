@@ -25,7 +25,7 @@ https://ghproxy.yukari0201.ggff.net/
 
 {% note warning %}
 
-#### 注意
+### 注意
 
 Cloudflare Workers 默认的 worker.dev 域名无法在国内正常访问，如果需要在国内使用，则**必须**绑定一个域名
 
