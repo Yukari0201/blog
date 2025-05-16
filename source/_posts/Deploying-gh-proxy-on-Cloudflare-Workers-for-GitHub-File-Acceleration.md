@@ -5,7 +5,7 @@ tags:
   - gh-proxy
   - GitHub
 date: 2025-05-13 18:16:44
-updated: 2025-05-14 17:11:01
+updated: 2025-05-16 17:35:01
 ---
 
 
@@ -56,6 +56,40 @@ Cloudflare Workers 默认的 worker.dev 域名无法在国内正常访问，如�
 - 将 `worker.js` 的内容替换为 [hunshcn/gh-proxy](https://github.com/hunshcn/gh-proxy) 项目提供的 `index.js` 的内容，该文件加速后的链接如下（选择其中一个即可）：
   - [个人自建 gh-proxy 加速连接](https://ghproxy.yukari0201.ggff.net/https://raw.githubusercontent.com/hunshcn/gh-proxy/refs/heads/master/index.js)
   - [JSDelivr 加速链接](https://gcore.jsdelivr.net/gh/hunshcn/gh-proxy@master/index.js)
+
+{% note info %}
+
+#### 为你的 gh-proxy 前端添加深色模式支持
+
+找到 worker.js 的这几行
+
+```javascript
+/**
+ * static files (404.html, sw.js, conf.js)
+ */
+const ASSET_URL = 'https://hunshcn.github.io/gh-proxy/'
+```
+
+将 `ASSET_URL` 常量的值改为 `'https://yukari0201.github.io/gh-proxy/'` 即可
+
+```javascript
+/**
+ * static files (404.html, sw.js, conf.js)
+ */
+const ASSET_URL = 'https://yukari0201.github.io/gh-proxy/'
+```
+
+**其中的原理**：
+
+`ASSET_URL` 常量表示前端静态资源的地址，而本人 Fork 了 [原项目](https://github.com/hunshcn/gh-proxy)，并在 DeepSeek 的帮助下对前端界面进行了一点点修改（详见 [gh-pages 分支](https://github.com/Yukari0201/gh-proxy/tree/gh-pages)）
+
+~~实际全是 DeepSeek 干的，有人压迫剥削 AI~~
+
+将静态资源的地址替换为本人提供的地址后，就支持深色模式了喵～
+
+点个 Star 喵～ https://github.com/Yukari0201/gh-proxy
+
+{% endnote %}
 
 3、确认无误后，点击右上的 `部署` 即可
 
