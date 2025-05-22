@@ -10,7 +10,7 @@ categories:
 
 ## 观前提醒
 
-本教程依赖于 `inputevent.lua`
+本教程依赖于 `inputevent.lua`  
 https://github.com/natural-harmonia-gropius/input-event
 
 ## 让我们开始叭
@@ -47,6 +47,21 @@ RIGHT no-osd set speed 2                #event: press
 RIGHT ignore                            #event: release
 ```
 
+{% note info %}
+
+#### (推荐) 配置 mpv.conf
+
+推荐在你的 `mpv.conf` 中写入如下配置
+
+```ini
+input-doubleclick-time=200
+```
+
+原因参见：  
+https://github.com/natural-harmonia-gropius/input-event?tab=readme-ov-file#how-to-use
+
+{% endnote %}
+
 这样就可以长按 `右方向键` 实现2倍速播放视频啦～
 
 同时，单击 `右方向键` 仍旧是 mpv 默认的快进5秒，并没有影响到默认快捷键
@@ -55,7 +70,7 @@ RIGHT ignore                            #event: release
 
 ### 结束后还要说的事情
 
-`inputevent.lua` 脚本是对 mpv 的 `input.conf` 做了增强，不仅能实现本文所讲的功能，还能自由搭配，实现更多功能，详情请参考官方文档：
+`inputevent.lua` 脚本是对 mpv 的 `input.conf` 做了增强，不仅能实现本文所讲的功能，还能自由搭配，实现更多功能，详情请参考官方文档：  
 https://github.com/natural-harmonia-gropius/input-event
 
 我期待各位配置出独一无二只属于你自己的快捷键，到时候别忘了分享一下哦～
