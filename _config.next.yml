@@ -178,7 +178,8 @@ links_settings:
   layout: block
 
 links:
-  #Title: https://example.com
+  Yukari0201's Scoop Bucket: https://github.com/Yukari0201/scoop-bucket
+  Yukari0201's MMRL Repo: https://yukari0201.github.io/mmrl-repo/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (nonsupport wrap expand_all).
