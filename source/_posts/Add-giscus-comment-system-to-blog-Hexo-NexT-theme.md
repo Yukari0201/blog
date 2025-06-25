@@ -3,7 +3,7 @@ title: 为个人博客添加 Giscus 评论系统 (Hexo + NexT 主题)
 tags: blog
 categories: blog
 date: 2025-04-05 15:27:36
-updated: 2025-04-05 17:58:01
+updated: 2025-06-25 14:37:01
 ---
 
 
@@ -127,6 +127,6 @@ https://docs.github.com/en/discussions/managing-discussions-for-your-community/m
 
 ## 碎碎念
 
-你可以在 https://github.com/Yukari0201/yukari0201.github.io 看到我的博客的所有源代码，所以，放心评论叭
+你可以在 https://github.com/Yukari0201/Yukari0201.github.io 看到我的博客的所有源码，所以，放心评论叭
 
 ~~博客评论系统换了一套，结果还是没有人发评论（~~

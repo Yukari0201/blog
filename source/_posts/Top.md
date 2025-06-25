@@ -9,6 +9,6 @@ comments: false
 
 这里是 Yukari0201 的个人博客
 
-博客源代码：https://github.com/Yukari0201/yukari0201.github.io
+博客源代码：https://github.com/Yukari0201/Yukari0201.github.io
 
 找不到文章时请善用标签、分类和搜索功能哦～
