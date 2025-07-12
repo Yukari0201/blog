@@ -5,7 +5,7 @@ tags:
   - gh-proxy
   - GitHub
 date: 2025-05-13 18:16:44
-updated: 2025-05-16 17:35:01
+updated: 2025-07-12 19:13:01
 ---
 
 
@@ -53,13 +53,17 @@ Cloudflare Workers 默认的 worker.dev 域名无法在国内正常访问，如�
 - 如果你不小心点错了，点成了 `继续处理项目`，不用担心，只需要点击右上的 <i class="fa-solid fa-code"></i>`编辑代码` 按钮即可
 
 2、替换代码
-- 将 `worker.js` 的内容替换为 [hunshcn/gh-proxy](https://github.com/hunshcn/gh-proxy) 项目提供的 `index.js` 的内容，该文件加速后的链接如下（选择其中一个即可）：
-  - [个人自建 gh-proxy 加速连接](https://ghproxy.yukari0201.ggff.net/https://raw.githubusercontent.com/hunshcn/gh-proxy/refs/heads/master/index.js)
-  - [JSDelivr 加速链接](https://gcore.jsdelivr.net/gh/hunshcn/gh-proxy@master/index.js)
+- 将 `worker.js` 的内容替换为 [Yukari0201/gh-proxy](https://github.com/Yukari0201/gh-proxy)（Fork from [hunshcn/gh-proxy](https://github.com/hunshcn/gh-proxy)） 项目提供的 `index.js` 的内容，该文件加速后的链接如下（选择其中一个即可）：
+  - [个人自建 gh-proxy 加速连接](https://ghproxy.yukari0201.ggff.net/https://raw.githubusercontent.com/Yukari0201/gh-proxy/refs/heads/master/index.js)
+  - [JSDelivr 加速链接](https://gcore.jsdelivr.net/gh/Yukari0201/gh-proxy@master/index.js)
 
 {% note info %}
 
 #### 为你的 gh-proxy 前端添加深色模式支持
+
+如果你使用 [Yukari0201/gh-proxy](https://github.com/Yukari0201/gh-proxy) 提供的 `index.js`，则无需进行下面的操作
+
+如果你使用  [hunshcn/gh-proxy](https://github.com/hunshcn/gh-proxy) 提供的 `index.js`，我也不建议你如此操作，因为添加了 `git.io` 和 `api.github.com` 的支持，而原版不支持
 
 找到 worker.js 的这几行
 
@@ -82,6 +86,8 @@ const ASSET_URL = 'https://yukari0201.github.io/gh-proxy/'
 **其中的原理**：
 
 `ASSET_URL` 常量表示前端静态资源的地址，而本人 Fork 了 [原项目](https://github.com/hunshcn/gh-proxy)，并在 DeepSeek 的帮助下对前端界面进行了一点点修改（详见 [gh-pages 分支](https://github.com/Yukari0201/gh-proxy/tree/gh-pages)）
+
+**Update**: 前后端均增加了 `git.io` 和 `api.github.com` 的支持（Thanks to [crazypeace/gh-proxy](https://github.com/crazypeace/gh-proxy)）
 
 ~~实际全是 DeepSeek 干的，有人压迫剥削 AI~~
 
