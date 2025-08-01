@@ -72,7 +72,7 @@ MPC-BE 和 MPC-HC 根据个人喜好二选一即可。
 
 MPC-HC 的官方版本早已停更，现在是由 clsid2 进行维护。
 
-去 MPC-HC 的 [Github Releases](hhttps://github.com/clsid2/mpc-hc/releases/latest) 下载最新版本的安装包（名称类似 `MPC-HC.<版本号>.x64.exe `），解压并运行安装程序  
+去 MPC-HC 的 [Github Releases](https://github.com/clsid2/mpc-hc/releases/latest) 下载最新版本的安装包（名称类似 `MPC-HC.<版本号>.x64.exe `），解压并运行安装程序  
 安装程序有简体中文，大多数选项我相信各位都能看懂，所以我也是只提一点：
 在 `选择组件` 这一步请保持默认选项（即勾选全部组件）。
 
