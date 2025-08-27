@@ -1,3 +1,7 @@
+## 仅作留档记录
+
+---
+
 # 博客源码
 
 这里是我用 [Hexo](https://hexo.io/) + [NexT 主题](https://theme-next.js.org/) 搭建的博客的源码。
