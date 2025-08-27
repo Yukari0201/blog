@@ -1,15 +1,15 @@
 ---
-import { commentConfig } from '@/config'
+import { commentConfig } from "@/config";
 
 interface Props {
-  path: string
+	path: string;
 }
 
 const config = {
-  ...commentConfig.twikoo,
-  el: '#tcomment',
-  path: Astro.props.path,
-}
+	...commentConfig.twikoo,
+	el: "#tcomment",
+	path: Astro.props.path,
+};
 ---
 
 <div id="tcomment"></div>
