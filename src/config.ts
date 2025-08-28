@@ -13,8 +13,8 @@ export const siteConfig: SiteConfig = {
 	subtitle: "Yukari0201's Time Machine",
 	lang: "zh_CN", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
-		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
-		fixed: false, // Hide the theme color picker for visitors
+		hue: 349, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+		fixed: true, // Hide the theme color picker for visitors
 	},
 	banner: {
 		enable: false,
@@ -59,21 +59,14 @@ export const profileConfig: ProfileConfig = {
 	bio: "喵呜～",
 	links: [
 		{
-			name: "Twitter",
-			icon: "fa6-brands:twitter", // Visit https://icones.js.org/ for icon codes
-			// You will need to install the corresponding icon set if it's not already included
-			// `pnpm add @iconify-json/<icon-set-name>`
-			url: "https://twitter.com",
-		},
-		{
-			name: "Steam",
-			icon: "fa6-brands:steam",
-			url: "https://store.steampowered.com",
-		},
-		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/Yukari0201",
+		},
+		{
+			name: "Bilibili",
+			icon: "fa6-brands:bilibili",
+			url: "https://space.bilibili.com/3546567529204536",
 		},
 	],
 };
@@ -91,9 +84,6 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 };
 
 export const commentConfig: CommentConfig = {
-	//disqus: {
-	//  shortname: 'fuwari',
-	//},
 	giscus: {
 		repo: "Yukari0201/Yukari0201.github.io",
 		repoId: "R_kgDOK3p0uA",
@@ -108,7 +98,4 @@ export const commentConfig: CommentConfig = {
 		lang: "zh-CN",
 		loading: "lazy",
 	},
-	// twikoo: {
-	//   envId: 'https://twikoo-tau-flame.vercel.app',
-	// },
 };
