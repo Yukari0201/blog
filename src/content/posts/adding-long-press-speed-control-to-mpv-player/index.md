@@ -48,18 +48,18 @@ RIGHT no-osd set speed 2                #event: press
 RIGHT ignore                            #event: release
 ```
 
-> [NOTE] (推荐) 配置 mpv.conf
-> 
-> 推荐在你的 `mpv.conf` 中写入如下配置
-> 
-> ```ini
-> input-doubleclick-time=200
-> ```
+ :::note[(推荐) 配置 mpv.conf]
+
+推荐在你的 `mpv.conf` 中写入如下配置
+
+```ini
+input-doubleclick-time=200
+```
 
 原因参见：  
 https://github.com/natural-harmonia-gropius/input-event?tab=readme-ov-file#how-to-use
 
-{% endnote %}
+ :::
 
 这样就可以长按 `右方向键` 实现2倍速播放视频啦～
 
