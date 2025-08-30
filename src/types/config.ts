@@ -1,5 +1,5 @@
 import type { AUTO_MODE, DARK_MODE, LIGHT_MODE } from "@constants/constants";
-import type * as Giscus from "giscus";
+import type * as Giscus from "@giscus/svelte";
 
 export type SiteConfig = {
 	title: string;
@@ -121,16 +121,17 @@ type DisqusConfig = {
 
 type GiscusConfig = {
 	repo: Giscus.Repo;
-	repoId?: string;
-	category?: string;
-	categoryId?: string;
+	host?: string;
+	repoId: string;
+	category: string;
+	categoryId: string;
 	mapping?: Giscus.Mapping;
 	term?: string;
-	strict: Giscus.BooleanString;
-	reactionsEnabled: Giscus.BooleanString;
-	emitMetadata: Giscus.BooleanString;
-	inputPosition: Giscus.InputPosition;
-	theme: Giscus.Theme;
-	lang: Giscus.AvailableLanguage;
-	loading: Giscus.Loading;
+	strict?: Giscus.BooleanString;
+	reactionsEnabled?: Giscus.BooleanString;
+	emitMetadata?: Giscus.BooleanString;
+	inputPosition?: Giscus.InputPosition;
+	theme?: Giscus.Theme;
+	lang?: Giscus.AvailableLanguage;
+	loading?: Giscus.Loading;
 };

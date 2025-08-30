@@ -1,9 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { commentConfig } from "@/config";
-import Disqus from "./Disqus.astro";
-import Giscus from "./Giscus.astro";
-import Twikoo from "./Twikoo.astro";
+import Giscus from "./Giscus.svelte";
 
 interface Props {
 	post: CollectionEntry<"posts">;
@@ -24,8 +22,6 @@ if (commentConfig?.disqus) {
 }
 ---
 <div class="card-base p-6 mb-4">
-  {commentService === 'disqus' && <Disqus identifier={id} url={url} title={data.title} />}
-  {commentService === 'giscus' && <Giscus />}
-  {commentService === 'twikoo' && <Twikoo path={path} />}
+  {commentService === 'giscus' && <Giscus client:only="svelte" />}
   {commentService === '' && null}
 </div>
