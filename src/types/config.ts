@@ -104,19 +104,7 @@ export type ExpressiveCodeConfig = {
 };
 
 export type CommentConfig = {
-	twikoo?: TwikooConfig;
-	disqus?: DisqusConfig;
 	giscus?: GiscusConfig;
-};
-
-type TwikooConfig = {
-	envId: string;
-	region?: string;
-	lang?: string;
-};
-
-type DisqusConfig = {
-	shortname: string;
 };
 
 type GiscusConfig = {
