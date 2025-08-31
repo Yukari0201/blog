@@ -13,12 +13,8 @@ const path = `/posts/${slug}`;
 const url = `${Astro.site?.href}${path}`;
 
 let commentService = "";
-if (commentConfig?.disqus) {
-	commentService = "disqus";
-} else if (commentConfig?.giscus) {
+if (commentConfig?.giscus) {
 	commentService = "giscus";
-} else if (commentConfig?.twikoo) {
-	commentService = "twikoo";
 }
 ---
 <div class="card-base p-6 mb-4">
