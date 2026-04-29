@@ -5,8 +5,8 @@ import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import { getPostUrlBySlug } from "../utils/url-utils";
 
-export let tags: string[];
-export let categories: string[];
+export let tags: string[] = [];
+export let categories: string[] = [];
 export let sortedPosts: Post[] = [];
 
 const params = new URLSearchParams(window.location.search);
@@ -19,8 +19,8 @@ interface Post {
 	data: {
 		title: string;
 		tags: string[];
-		category?: string;
-		published: Date;
+		category?: string | null;
+		published: Date | string;
 	};
 }
 
@@ -31,9 +31,10 @@ interface Group {
 
 let groups: Group[] = [];
 
-function formatDate(date: Date) {
-	const month = (date.getMonth() + 1).toString().padStart(2, "0");
-	const day = date.getDate().toString().padStart(2, "0");
+function formatDate(date: Date | string) {
+	const d = typeof date === "string" ? new Date(date) : date;
+	const month = (d.getMonth() + 1).toString().padStart(2, "0");
+	const day = d.getDate().toString().padStart(2, "0");
 	return `${month}-${day}`;
 }
 
@@ -64,7 +65,11 @@ onMount(async () => {
 
 	const grouped = filteredPosts.reduce(
 		(acc, post) => {
-			const year = post.data.published.getFullYear();
+			const published =
+				typeof post.data.published === "string"
+					? new Date(post.data.published)
+					: post.data.published;
+			const year = published.getFullYear();
 			if (!acc[year]) {
 				acc[year] = [];
 			}
