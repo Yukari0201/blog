@@ -61,8 +61,13 @@ export const profileConfig: ProfileConfig = {
 	links: [
 		{
 			name: "GitHub",
-			icon: "fa6-brands:github",
+			icon: "fa6-brands:github", // Visit https://icones.js.org/ for icon codes
 			url: "https://github.com/Yukari0201",
+		},
+		{
+			name: "Matrix",
+			icon: "simple-icons:matrix",
+			url: "https://matrix.to/#/@yukari0201:mozilla.org",
 		},
 		{
 			name: "Bilibili",
