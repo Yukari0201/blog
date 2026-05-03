@@ -66,7 +66,7 @@ export const profileConfig: ProfileConfig = {
 		},
 		{
 			name: "Matrix",
-			icon: "simple-icons:matrix",
+			icon: "ph:matrix-logo",
 			url: "https://matrix.to/#/@yukari0201:mozilla.org",
 		},
 		{
