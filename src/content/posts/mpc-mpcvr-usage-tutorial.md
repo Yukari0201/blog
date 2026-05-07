@@ -2,7 +2,7 @@
 title: MPC-BE/HC + MPCVR 使用教程
 description: "初步设置 MPC-BE/HC + MPCVR"
 published: 2025-01-05
-updated: 2025-08-27
+updated: 2026-05-07
 tags:
   - Windows
   - DirectShow
@@ -93,13 +93,15 @@ scoop install mpc-be
 ```
 ```
 scoop bucket add Yukari0201 https://github.com/Yukari0201/scoop-bucket
-sudo scoop install Yukari0201/mpcvr
+scoop install Yukari0201/mpcvr
 ```
 
 > [!NOTE]
-> mpcvr 需要使用管理员权限来安装，所以：  
-> 你可能需要启用 sudo（[Windows11 24H2 及以后](https://learn.microsoft.com/zh-cn/windows/advanced-settings/sudo/#prerequisites)）  
-> 或安装 sudo（Windows10 及 Windows11 24H2 以前的版本）`scoop install sudo`
+> ~~mpcvr 需要使用管理员权限来安装，所以：~~  
+> ~~你可能需要启用 sudo（[Windows11 24H2 及以后](https://learn.microsoft.com/zh-cn/windows/advanced-settings/sudo/#prerequisites)）~~  
+> ~~或安装 sudo（Windows10 及 Windows11 24H2 以前的版本）`scoop install sudo`~~
+>
+> 如果你安装的是 `Yukari0201/mpcvr`，那么 `regsvr32.exe` 自己会请求管理员权限，本 NOTE 框内容无用
 
 #### 用 scoop 安装 MPC-HC + MPCVR
 
