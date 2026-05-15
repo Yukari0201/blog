@@ -1,0 +1,21 @@
+name: Dependabot Auto-Merge
+
+on: pull_request
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    # 仅当 PR 由 dependabot 发起时运行
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3
+        with:
+          # 设置为 minor 将自动涵盖 minor 和 patch 
+          target: 'minor'
+          # 不直接合并，而是标记为“自动合并”，由 GitHub 等待其他 Check 
+          use-github-auto-merge: true
+          # 指定合并方式
+          merge-method: 'squash'
