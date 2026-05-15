@@ -11,6 +11,8 @@ jobs:
       pull-requests: write
       contents: write
     steps:
+      - name: Wait for GitHub API to stabilize
+        run: sleep 10
       - uses: fastify/github-action-merge-dependabot@v3
         with:
           # 设置为 minor 将自动涵盖 minor 和 patch 
