@@ -34,7 +34,7 @@
     "@iconify-json/ph": "^1.2.2",
     "@iconify/svelte": "^4.2.0",
     "@swup/astro": "^1.8.0",
-    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/typography": "^0.5.20",
     "astro": "5.18.2",
     "astro-expressive-code": "^0.42.0",
     "astro-icon": "^1.1.5",
@@ -58,7 +58,7 @@
     "sanitize-html": "^2.17.4",
     "sharp": "^0.34.5",
     "stylus": "^0.64.0",
-    "svelte": "^5.56.1",
+    "svelte": "^5.56.3",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3",
     "unist-util-visit": "^5.1.0"
