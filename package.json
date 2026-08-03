@@ -30,7 +30,7 @@
     "@iconify-json/fa6-brands": "^1.2.6",
     "@iconify-json/fa6-regular": "^1.2.4",
     "@iconify-json/fa6-solid": "^1.2.4",
-    "@iconify-json/material-symbols": "^1.2.87",
+    "@iconify-json/material-symbols": "^1.2.88",
     "@iconify-json/ph": "^1.2.2",
     "@iconify/svelte": "^4.2.0",
     "@swup/astro": "^1.8.0",
@@ -65,7 +65,7 @@
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.10.10",
-    "@biomejs/biome": "2.5.5",
+    "@biomejs/biome": "2.5.6",
     "@rollup/plugin-yaml": "^4.1.2",
     "@types/hast": "^3.0.5",
     "@types/markdown-it": "^14.1.2",
